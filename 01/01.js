@@ -1,7 +1,4 @@
-import "fs";
-import "fs";
 import { createReadStream } from "fs";
-import "readline";
 import { createInterface } from "readline";
 
 let numbers = [];
@@ -11,14 +8,12 @@ createInterface({
   output: process.stdout,
   terminal: false,
 })
-  .on("line", function (number) {
-    numbers.push(parseInt(number));
-  })
+  .on("line", (line) => numbers.push(parseInt(line)))
   .on("close", () => {
-    for (const firstNumber of numbers) {
-      for (const secondNumber of numbers) {
+    for (let firstNumber of numbers) {
+      for (let secondNumber of numbers) {
         if (firstNumber + secondNumber == 2020) {
-          return console.log(firstNumber * secondNumber);
+          return console.log(firstNumber * secondNumber); // 
         }
       }
     }
