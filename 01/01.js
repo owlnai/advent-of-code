@@ -13,7 +13,12 @@ createInterface({
     for (let firstNumber of numbers) {
       for (let secondNumber of numbers) {
         if (firstNumber + secondNumber == 2020) {
-          return console.log(firstNumber * secondNumber); // 
+          console.log('First half: ' + firstNumber * secondNumber); // 
+        }
+        for (let thirdNumber of numbers) { 
+          if (firstNumber + secondNumber + thirdNumber == 2020) {
+            return console.log('Second half: ' + firstNumber * secondNumber * thirdNumber); // 
+          }
         }
       }
     }
